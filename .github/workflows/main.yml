@@ -122,5 +122,5 @@ jobs:
     needs: [helm-ci, docker-ci]
     secrets: inherit
     with:
-      environment: dev
+      environment: development
       version: ${{ github.sha }}
