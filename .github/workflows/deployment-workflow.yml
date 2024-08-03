@@ -68,6 +68,7 @@ jobs:
         --set todoapp.image.tag=${{ github.sha }}
 
     - name: Deploy Helm to Development
+      continue-on-error: true
       run: |
         helm upgrade --install --atomic --wait --timeout 3600s --debug todoapp ./todoapp-*.tgz \
         -f ${{ inputs.helm-values-path }}  \
